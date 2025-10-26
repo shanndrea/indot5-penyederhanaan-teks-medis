@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Beri tahu Docker port mana yang akan diekspos
-EXPOSE 5000
+EXPOSE 7860
 
 # Perintah untuk menjalankan aplikasi saat container dimulai
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:7860", "app:app"]
