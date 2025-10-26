@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sederhanakan Teks Medis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header-bar"></header>
+
+    <main class="container">
+        <div class="main-layout">
+            <!-- Sidebar untuk daftar penyakit -->
+            <aside class="disease-sidebar">
+                <div class="sidebar-header">
+                    <h3>Koleksi Istilah Medis</h3>
+                    <p>Contoh istilah dan kondisi yang dapat disederhanakan</p>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="disease-search" placeholder="Cari istilah medis...">
+                </div>
+                
+                <div class="disease-list" id="disease-list">
+                    <!-- Daftar penyakit akan diisi oleh JavaScript -->
+                </div>
+                
+                <div class="sidebar-footer">
+                    <p><strong>Tip:</strong> Klik pada istilah untuk melihat contoh</p>
+                </div>
+            </aside>
+
+            <!-- Konten utama -->
+            <div class="main-content">
+                <h1>Sederhanakan Teks Medis</h1>
+                <p class="subtitle">
+                    Ubah istilah dan kalimat medis yang rumit menjadi bahasa yang lebih sederhana dan mudah dimengerti. 
+                    Cukup masukkan teks pada kolom di bawah ini untuk melihat hasilnya secara instan.
+                </p>
+
+                <div class="card">
+                    <div class="translator-box">
+                        <div class="column">
+                            <label for="input-text">Input</label>
+                            <textarea id="input-text" placeholder="Input atau paste teks untuk sederhanakan...."></textarea>
+                            <div class="input-validation" id="input-validation"></div>
+                            <button class="simplify-button" id="simplify-button" type="button">
+                                <span class="button-text">Sederhanakan</span>
+                                <div class="spinner hidden" id="loading-spinner"></div>
+                            </button>
+                        </div>
+
+                        <div class="column">
+                            <label for="output-text">Output</label>
+                            <div id="output-text" class="output-display">Hasil akan muncul di sini...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

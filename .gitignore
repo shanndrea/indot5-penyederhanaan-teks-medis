@@ -1,0 +1,19 @@
+# Python virtual environment
+venv/
+/venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# IDE files
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# AI Model files (jika ada yang terunduh lokal)
+*.bin
+*.pth
+*.safetensors

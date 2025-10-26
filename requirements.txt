@@ -1,0 +1,14 @@
+# Web Framework & Server
+Flask==2.3.3
+Flask-Cors==4.0.0
+gunicorn
+
+# Data Processing & Cleaning
+pandas==2.3.3
+ftfy==6.3.1
+
+# AI Model & Transformers
+torch==2.8.0
+transformers==4.57.0
+sentencepiece==0.2.1 
+accelerate==1.10.1

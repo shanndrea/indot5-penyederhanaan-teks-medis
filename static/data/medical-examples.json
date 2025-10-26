@@ -1,0 +1,291 @@
+{
+  "medicalExamples": [
+    {
+      "id": 1,
+      "name": "Kejang Demam",
+      "description": "Kejang pada anak yang dipicu oleh demam",
+      "example": "Kejang demam atau penyakit step adalah kejang pada anak yang dipicu oleh demam, bukan kelainan pada otak.",
+      "category": "Penyakit Neurologis Anak"
+    },
+    {
+      "id": 2,
+      "name": "Hipertensi",
+      "description": "Tekanan darah tinggi",
+      "example": "Seseorang yang memiliki faktor risiko seperti riwayat keluarga sakit jantung atau stroke, merokok, kolesterol tinggi, tekanan darah tinggi, dan diabetes memiliki risiko terkena stroke.",
+      "category": "Penyakit Kardiovaskular"
+    },
+    {
+      "id": 3,
+      "name": "Penyakit Jantung Hipertensi",
+      "description": "Gangguan jantung akibat tekanan darah tinggi jangka panjang",
+      "example": "Hypertensive heart disease adalah berbagai gangguan atau masalah pada jantung akibat tekanan darah tinggi yang tidak terkendali dalam jangka waktu lama.",
+      "category": "Penyakit Kardiovaskular"
+    },
+    {
+      "id": 4,
+      "name": "Gastroenteritis dan Kolitis",
+      "description": "Peradangan pada lambung, usus, dan usus besar",
+      "example": "Gastroenteritis adalah peradangan pada lambung dan usus yang dapat menimbulkan berbagai gejala tidak nyaman, termasuk mual, muntah, dan diare.",
+      "category": "Penyakit Pencernaan"
+    },
+    {
+      "id": 5,
+      "name": "Bronkitis",
+      "description": "Peradangan pada saluran udara (bronkus)",
+      "example": "Bronkitis akut ditandai dengan batuk yang berlangsung singkat, biasanya 1–3 minggu.",
+      "category": "Penyakit Pernapasan"
+    },
+    {
+      "id": 6,
+      "name": "Asma",
+      "description": "Penyakit peradangan kronis pada saluran napas",
+      "example": "GERD bisa menimbulkan keluhan yang mirip dengan asma, seperti batuk terus-menerus (kronis), sesak napas, atau mengi.",
+      "category": "Penyakit Pernapasan"
+    },
+    {
+      "id": 7,
+      "name": "Diabetes Mellitus Tipe 2",
+      "description": "Penyakit gula yang tidak tergantung pada insulin",
+      "example": "Non-insulin dependent diabetes mellitus atau diabetes melitus yang tidak tergantung pada insulin dikenal juga sebagai diabetes tipe 2.",
+      "category": "Penyakit Endokrin & Metabolik"
+    },
+    {
+      "id": 8,
+      "name": "Infeksi Saluran Kemih (ISK)",
+      "description": "Infeksi yang terjadi di sistem perkemihan",
+      "example": "Infeksi saluran kemih (ISK) adalah infeksi yang terjadi di sistem perkemihan, meliputi ginjal, ureter, kandung kemih, dan uretra.",
+      "category": "Penyakit Infeksi"
+    },
+    {
+      "id": 9,
+      "name": "Faringitis Akut",
+      "description": "Radang tenggorokan yang terjadi secara mendadak",
+      "example": "Faringitis akut adalah peradangan pada faring (tenggorokan) yang berlangsung cepat dan biasanya sembuh dalam waktu kurang dari 2 minggu.",
+      "category": "Penyakit THT"
+    },
+    {
+      "id": 10,
+      "name": "Penyakit Paru Obstruktif Kronis (PPOK)",
+      "description": "Penyakit paru kronis yang menghambat aliran udara",
+      "example": "Penyakit paru obstruktif kronis (PPOK) adalah peradangan paru kronis yang memicu terhalangnya aliran udara dari paru-paru.",
+      "category": "Penyakit Pernapasan"
+    },
+    {
+      "id": 11,
+      "name": "Infeksi Saluran Pernapasan Akut (ISPA)",
+      "description": "Infeksi mendadak pada saluran napas atas atau bawah",
+      "example": "Infeksi saluran pernapasan akut (ISPA) adalah sekumpulan infeksi yang menyerang saluran pernapasan.",
+      "category": "Penyakit Infeksi"
+    },
+    {
+      "id": 12,
+      "name": "Demam Berdarah Dengue (DBD)",
+      "description": "Penyakit infeksi virus yang menular lewat nyamuk",
+      "example": "Demam berdarah adalah penyakit infeksi akibat virus yang menular melalui gigitan nyamuk.",
+      "category": "Penyakit Infeksi"
+    },
+    {
+      "id": 13,
+      "name": "Sakit Perut",
+      "description": "Rasa nyeri yang muncul di area antara tulang iga dan panggul",
+      "example": "Sakit perut adalah rasa sakit atau nyeri yang muncul di perut, yaitu area di bagian depan tubuh antara tulang iga dan tulang panggul.",
+      "category": "Gejala Umum"
+    },
+    {
+      "id": 14,
+      "name": "Mual dan Muntah",
+      "description": "Rasa tidak nyaman di perut dan pengeluaran isi lambung",
+      "example": "Mual adalah rasa ingin muntah dan tidak nyaman di perut. Meski begitu, mual tidak selalu disertai dengan muntah.",
+      "category": "Gejala Umum"
+    },
+    {
+      "id": 15,
+      "name": "Dispepsia",
+      "description": "Rasa tidak nyaman pada perut bagian atas karena masalah pencernaan",
+      "example": "Dispepsia menjadi suatu kondisi yang dapat mengakibatkan munculnya rasa tidak nyaman pada perut bagian atas karena masalah asam lambung atau penyakit mag.",
+      "category": "Penyakit Pencernaan"
+    },
+    {
+      "id": 16,
+      "name": "Gagal Jantung Kongestif",
+      "description": "Kondisi saat jantung gagal memompa darah yang dibutuhkan tubuh",
+      "example": "Gagal jantung kongestif merupakan kondisi ketika jantung gagal menjalani fungsinya dalam memompa pasokan darah yang dibutuhkan tubuh.",
+      "category": "Penyakit Kardiovaskular"
+    },
+    {
+      "id": 17,
+      "name": "Bronkopneumonia",
+      "description": "Jenis radang paru yang menyerang saluran dan kantung udara",
+      "example": "Bronkopneumonia adalah salah satu jenis pneumonia yang disebabkan oleh infeksi virus, bakteri, atau jamur.",
+      "category": "Penyakit Pernapasan"
+    },
+    {
+      "id": 18,
+      "name": "Sakit Kepala",
+      "description": "Rasa nyeri di kepala yang bisa muncul bertahap atau mendadak",
+      "example": "Sakit kepala adalah rasa sakit atau nyeri di kepala yang bisa muncul secara bertahap atau mendadak.",
+      "category": "Gejala Umum"
+    },
+    {
+      "id": 19,
+      "name": "Pusing",
+      "description": "Sensasi seperti melayang, berputar, atau akan pingsan",
+      "example": "Pusing adalah sensasi seperti melayang, berputar, kliyengan, atau merasa akan pingsan.",
+      "category": "Gejala Umum"
+    },
+    {
+      "id": 20,
+      "name": "Demam Tifoid (Tipes)",
+      "description": "Penyakit infeksi akibat bakteri Salmonella typhi",
+      "example": "Demam tifoid adalah penyakit infeksi akibat bakteri Salmonella typhi.",
+      "category": "Penyakit Infeksi"
+    },
+    {
+      "id": 21,
+      "name": "Nyeri Punggung Bawah",
+      "description": "Rasa nyeri di pinggang yang bisa menjalar ke bokong dan paha",
+      "example": "Nyeri punggung bawah (low back pain) adalah rasa nyeri pada pinggang atau tulang punggung bagian bawah yang bisa terasa hingga ke bokong dan paha.",
+      "category": "Kondisi Muskuloskeletal"
+    },
+    {
+      "id": 22,
+      "name": "Stroke",
+      "description": "Gangguan fungsi otak akibat terganggunya pasokan darah",
+      "example": "Stroke mengakibatkan gangguan fungsi otak secara mendadak akibat terganggunya pasokan aliran darah ke otak.",
+      "category": "Penyakit Neurologis"
+    },
+    {
+      "id": 23,
+      "name": "Infark Serebral (Stroke Sumbatan)",
+      "description": "Kematian sel otak akibat kekurangan oksigen karena sumbatan",
+      "example": "Infark cerebri merupakan kematian sel-sel otak yang disebabkan kekurangan oksigen. Keadaan ini sering disebut dengan stroke.",
+      "category": "Penyakit Neurologis"
+    },
+    {
+      "id": 24,
+      "name": "Pneumonia (Radang Paru-paru)",
+      "description": "Peradangan paru-paru akibat infeksi",
+      "example": "Pneumonia adalah peradangan paru-paru yang disebabkan oleh infeksi virus, bakteri, atau jamur.",
+      "category": "Penyakit Pernapasan"
+    },
+    {
+      "id": 25,
+      "name": "Kemoterapi",
+      "description": "Pemberian obat untuk menghentikan pertumbuhan sel kanker",
+      "example": "Kemoterapi adalah pemberian obat-obatan untuk menghambat atau menghentikan pertumbuhan sel-sel kanker.",
+      "category": "Prosedur Medis"
+    },
+    {
+      "id": 26,
+      "name": "Konjungtivitis",
+      "description": "Mata merah akibat peradangan pada selaput mata",
+      "example": "Konjungtivitis adalah mata merah akibat peradangan pada selaput yang melapisi permukaan bola mata dan konjungtiva mata.",
+      "category": "Penyakit Mata"
+    },
+    {
+      "id": 27,
+      "name": "Karies Gigi",
+      "description": "Kerusakan lapisan struktur gigi secara bertahap",
+      "example": "Karies gigi adalah kondisi ketika lapisan struktur gigi mengalami kerusakan secara bertahap.",
+      "category": "Kesehatan Gigi & Mulut"
+    },
+    {
+      "id": 28,
+      "name": "Rehabilitasi Medik",
+      "description": "Terapi untuk memulihkan fungsi tubuh yang bermasalah",
+      "example": "Rehabilitasi medik adalah terapi yang dilakukan untuk memulihkan atau mengembalikan fungsi tubuh yang bermasalah akibat cedera, operasi, ataupun penyakit tertentu.",
+      "category": "Prosedur Medis"
+    },
+    {
+      "id": 29,
+      "name": "Katarak",
+      "description": "Gangguan penglihatan akibat keruhnya lensa mata",
+      "example": "Katarak adalah gangguan penglihatan yang disebabkan oleh keruhnya lensa mata. Kondisi yang menyebabkan penglihatan kabur ini umum terjadi akibat pertambahan usia.",
+      "category": "Penyakit Mata"
+    },
+    {
+      "id": 30,
+      "name": "Gigi Impaksi",
+      "description": "Kondisi gigi yang tidak dapat keluar dengan normal",
+      "example": "Impacted teeth atau gigi impaksi adalah kondisi gigi yang tidak dapat keluar dengan normal karena kekurangan ruangan untuk tumbuh.",
+      "category": "Kesehatan Gigi & Mulut"
+    },
+    {
+      "id": 31,
+      "name": "Malaise dan Kelelahan",
+      "description": "Perasaan lelah dan tidak nyaman tanpa penyebab jelas",
+      "example": "Malaise adalah istilah medis untuk menggambarkan perasaan lelah, tidak nyaman, dan kurang enak badan yang tidak diketahui apa penyebabnya.",
+      "category": "Gejala Umum"
+    },
+    {
+      "id": 32,
+      "name": "Myalgia (Nyeri Otot)",
+      "description": "Rasa sakit atau tidak nyaman pada otot",
+      "example": "Myalgia adalah istilah medis yang digunakan untuk menyebut nyeri otot.",
+      "category": "Gejala Umum"
+    },
+    {
+      "id": 33,
+      "name": "Hiperemesis Gravidarum",
+      "description": "Mual dan muntah berlebihan selama kehamilan",
+      "example": "Hiperemesis gravidarum adalah mual dan muntah yang terjadi secara berlebihan selama hamil.",
+      "category": "Kondisi Terkait Kehamilan"
+    },
+    {
+      "id": 34,
+      "name": "GERD (Penyakit Asam Lambung)",
+      "description": "Kondisi saat asam lambung naik ke kerongkongan",
+      "example": "GERD adalah penyakit yang terjadi ketika asam lambung naik ke kerongkongan.",
+      "category": "Penyakit Pencernaan"
+    },
+    {
+      "id": 35,
+      "name": "Gagal Ginjal Kronis",
+      "description": "Penurunan fungsi ginjal secara bertahap",
+      "example": "Gagal ginjal kronis (GGK) adalah kondisi ketika fungsi ginjal menurun secara bertahap selama lebih dari 3 bulan.",
+      "category": "Penyakit Ginjal"
+    },
+    {
+      "id": 36,
+      "name": "Dermatitis Atopik",
+      "description": "Peradangan kulit kronis yang gatal dan kering",
+      "example": "Dermatitis atopik adalah peradangan kulit yang ditandai dengan kulit kering, gatal, dan ruam merah.",
+      "category": "Penyakit Kulit"
+    },
+    {
+      "id": 37,
+      "name": "Penyakit Jantung Aterosklerotik",
+      "description": "Penyempitan pembuluh darah jantung akibat penumpukan plak",
+      "example": "Aterosklerosis merupakan akumulasi lemak atau plak pada pembuluh darah. Seiring waktu, plak dapat menyebabkan sumbatan total pada pembuluh darah.",
+      "category": "Penyakit Kardiovaskular"
+    },
+    {
+      "id": 38,
+      "name": "Tonsilitis",
+      "description": "Peradangan pada amandel",
+      "example": "Tonsilitis akut dapat menyebabkan gejala berupa sakit tenggorokan, kesulitan menelan, dan demam.",
+      "category": "Penyakit THT"
+    },
+    {
+      "id": 39,
+      "name": "Pulpitis",
+      "description": "Peradangan pada pulpa gigi",
+      "example": "Pulpitis adalah peradangan pada pulpa gigi yang dapat menyebabkan sakit gigi hebat.",
+      "category": "Kesehatan Gigi & Mulut"
+    },
+    {
+      "id": 40,
+      "name": "Tuberkulosis Paru (TBC)",
+      "description": "Infeksi bakteri kronis pada paru-paru",
+      "example": "Tuberkulosis paru-paru dikonfirmasi dengan mikroskop dahak dengan atau tanpa kultur.",
+      "category": "Penyakit Infeksi"
+    },
+    {
+      "id": 41,
+      "name": "Kehamilan",
+      "description": "Periode perkembangan janin dalam rahim",
+      "example": "Kehamilan adalah salah satu kondisi yang digunakan untuk menggambarkan periode saat janin berkembang dalam rahim.",
+      "category": "Kondisi Terkait Kehamilan"
+    }
+  ]
+}
