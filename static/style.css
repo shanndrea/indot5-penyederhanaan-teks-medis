@@ -245,6 +245,9 @@ textarea:focus {
     white-space: pre-wrap;
     word-wrap: break-word;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .output-display.success {
@@ -314,9 +317,11 @@ textarea:focus {
     gap: 12px;
     padding: 16px;
     border-radius: 8px;
-    border: 1px solid #FFD54F;
-    background-color: #FFF8E1;
+    border: 1px solid #FFCDD2; /* Border merah muda */
+    background-color: #FFF1F1; /* Latar merah sangat muda */
     text-align: left;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .warning-message::before {
@@ -324,11 +329,11 @@ textarea:focus {
     flex-shrink: 0;
     font-weight: bold;
     color: white;
-    background-color: #FFA726;
+    background-color: #E53935; 
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
@@ -336,19 +341,22 @@ textarea:focus {
 
 .warning-message .content {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .warning-message strong {
     display: block;
     font-weight: 600;
-    color: #E65100;
+    color: #C62828; /* Judul merah tua */
     font-size: 0.95rem;
     margin-bottom: 2px;
 }
 
 .warning-message span {
     display: block;
-    color: #F57C00;
+    color: #D32F2F; /* Teks deskripsi merah */
     font-size: 0.9rem;
     line-height: 1.5;
 }
@@ -386,4 +394,55 @@ textarea:focus {
         flex-direction: column;
         gap: 20px;
     }
+}
+
+/* Teks hasil penyederhanaan */
+.simplified-text {
+    line-height: 1.6;
+}
+
+/* Box info penyederhanaan */
+.simplification-info {
+    background-color: #FFF8E1; /* Samakan dengan warna warning */
+    border: 1px solid #FFD54F; /* Samakan dengan warna warning */
+    border-radius: 8px;
+    padding: 10px; /* Kurangi padding */
+    margin-top: 6px; /* Beri sedikit jarak dari atas */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.simplification-title {
+    font-weight: 600;
+    margin-bottom: 1px; /* Kurangi jarak */
+    color: #E65100;
+    font-size: 0.85rem;
+}
+
+.simplification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Kurangi jarak antar item */
+}
+
+.simplification-item {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Kurangi jarak */
+    font-size: 0.8rem;
+}
+
+.original-term {
+    font-weight: 500;
+    color: #F57C00;
+}
+
+.arrow {
+    color: #BDBDBD;
+}
+
+.simplified-term {
+    font-weight: 500;
+    color: #333;
 }

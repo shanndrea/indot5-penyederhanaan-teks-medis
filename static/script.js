@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const validationResult = validateInputWithMessage(text);
 
         simplifyButton.disabled = !validationResult.isValid;
-        
+
         if (validationResult.message) {
             inputValidation.textContent = validationResult.message;
             inputValidation.className = `input-validation ${validationResult.type}`;
@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     function validateInputWithMessage(text) {
         const trimmedText = text.trim();
         const maxLength = 256;
-        
+
         if (trimmedText.length === 0) {
             return { isValid: false, message: '', type: '' };
         }
@@ -228,101 +228,126 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         if (trimmedText.length < 10) {
-             return { isValid: false, message: 'Input teks terlalu pendek.', type: 'error' };
+            return { isValid: false, message: 'Input teks terlalu pendek.', type: 'error' };
         }
 
         if (text.length > maxLength) {
-            return { 
-                isValid: false, 
-                message: `Input terlalu panjang. Maksimal ${maxLength} karakter. (${text.length}/${maxLength})`, 
-                type: 'error' 
+            return {
+                isValid: false,
+                message: `Input terlalu panjang. Maksimal ${maxLength} karakter. (${text.length}/${maxLength})`,
+                type: 'error'
             };
         }
 
         return { isValid: true, message: 'Input valid dan siap disederhanakan.', type: 'success' };
     }
-    
+
     async function handleSimplify() {
         debugLog('=== handleSimplify START ===');
-    if (!inputTextarea || !outputBox || !simplifyButton) return;
+        if (!inputTextarea || !outputBox || !simplifyButton) return;
 
-    const textToSimplify = inputTextarea.value.trim();
-    if (!validateInputWithMessage(textToSimplify).isValid) {
-        alert('Teks input tidak valid!');
-        return;
-    }
-
-    setLoadingState(true);
-    outputBox.innerHTML = '';
-
-    try {
-        const validationResponse = await fetch('/validate-text', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text: textToSimplify })
-        });
-
-        if (!validationResponse.ok) {
-            throw new Error('Validation request failed');
-        }
-
-        const validationData = await validationResponse.json();
-        debugLog('Validation result:', validationData);
-
-        if (!validationData.is_medical) {
-            outputBox.innerHTML = `<div class="warning-message">
-                <div class="content">
-                    <strong>Peringatan:</strong>
-                    <span>Teks tidak mengandung istilah medis yang dikenali. Proses penyederhanaan dihentikan.</span>
-                </div>
-            </div>`;
-            setLoadingState(false); 
+        const textToSimplify = inputTextarea.value.trim();
+        if (!validateInputWithMessage(textToSimplify).isValid) {
+            alert('Teks input tidak valid!');
             return;
         }
 
-        const simplifyResponse = await fetch('/simplify', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ text: textToSimplify }),
-        });
+        setLoadingState(true);
+        outputBox.innerHTML = '';
 
-        if (!simplifyResponse.ok) {
-            const errorText = await simplifyResponse.text();
-            let errorData;
-            try {
-                errorData = JSON.parse(errorText);
-            } catch (e) {
-                errorData = { error: `Server error: ${simplifyResponse.status}` };
+        try {
+            const simplifyResponse = await fetch('/simplify', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: textToSimplify }),
+            });
+
+            const responseData = await simplifyResponse.json();
+            debugLog('Simplify response:', responseData);
+
+            // Handle berdasarkan status
+            if (responseData.status === 'blocked') {
+                // Kondisi 3: Tidak ada yang dikenali - STOP
+                outputBox.innerHTML = `
+                <div class="warning-message">
+                    <div class="content">
+                        <strong>Peringatan:</strong>
+                        <span>${responseData.message}</span>
+                    </div>
+                </div>
+            `;
+                outputBox.className = 'output-display';
+
+            } else if (responseData.status === 'success') {
+                let outputHTML = '';
+
+                // 1. "Bungkus" teks hasil dengan div-nya sendiri
+                outputHTML += `<div class="simplified-text">${responseData.simplified_text}</div>`;
+
+                // 2. Jika ada mapping, buat HTML-nya (logika ini tetap sama)
+                if (responseData.simplification_map && Object.keys(responseData.simplification_map).length > 0) {
+                    mappingHTML = `
+        <div class="simplification-info">
+            <div class="simplification-title">Model berhasil mengenali:</div>
+            <div class="simplification-list">
+                ${Object.entries(responseData.simplification_map).map(([original, simplified]) => `
+                    <div class="simplification-item">
+                        <span class="original-term">${original}</span>
+                        <span class="arrow">→</span>
+                        <span class="simplified-term">${simplified}</span>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+                    // Gabungkan HTML mapping ke hasil akhir
+                    outputHTML += mappingHTML;
+                }
+
+                // 3. Masukkan semua HTML yang sudah rapi ke outputBox
+                outputBox.innerHTML = outputHTML;
+                outputBox.className = 'output-display success';
+            } else {
+                throw new Error(responseData.error || 'Status response tidak dikenali');
             }
-            throw new Error(errorData.error || `HTTP error! status: ${simplifyResponse.status}`);
+
+        } catch (error) {
+            outputBox.innerHTML = `
+            <div class="warning-message">
+                <div class="content">
+                    <strong>Error:</strong>
+                    <span>${error.message}</span>
+                </div>
+            </div>
+        `;
+            outputBox.className = 'output-display';
+        } finally {
+            setLoadingState(false);
         }
 
-        const simplifyData = await simplifyResponse.json();
-
-        if (simplifyData.simplified_text) {
-            outputBox.textContent = simplifyData.simplified_text;
-            outputBox.className = 'output-display success';
-        } else if (simplifyData.error) {
-            throw new Error(simplifyData.error);
-        } else {
-            // Fallback jika struktur response tidak expected
-            outputBox.textContent = 'Respons tidak dikenali dari server.';
-            outputBox.className = 'output-display warning';
-        }
-
-    } catch (error) {
-        let userMessage = error.message;
-        if (error.message.includes('decoding to str') || error.message.includes('float found')) {
-            userMessage = 'Terjadi kesalahan teknis dalam memproses teks. Silakan coba lagi dengan teks yang berbeda.';
-        }
-        
-        outputBox.textContent = `Terjadi kesalahan: ${userMessage}`;
-        outputBox.className = 'output-display warning';
-    } finally {
-        setLoadingState(false);
+        debugLog('=== handleSimplify END ===');
     }
 
-    debugLog('=== handleSimplify END ===');
+    // Fungsi opsional untuk menampilkan notifikasi mapping kecil
+    function showMappingNotification(mapping) {
+        const mappingCount = Object.keys(mapping).length;
+        const notification = document.createElement('div');
+        notification.className = 'mapping-notification';
+        notification.innerHTML = `
+        <small>✅ ${mappingCount} istilah berhasil disederhanakan</small>
+    `;
+
+        // Tambahkan setelah output box
+        if (outputBox && outputBox.parentNode) {
+            outputBox.parentNode.insertBefore(notification, outputBox.nextSibling);
+
+            // Auto hide setelah 5 detik
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 5000);
+        }
     }
 
     function setLoadingState(isLoading) {

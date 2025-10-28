@@ -22,25 +22,30 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
+import re
+import ftfy
+
 def final_cleanup(sentence: str) -> str:
     cleaned_sentence = ftfy.fix_text(sentence)
 
-    words = cleaned_sentence.split()
-    if len(words) >= 7:
-        for length in (4, 3, 2):
-            end_phrase = " ".join(words[-length:])
-            main_part = " ".join(words[:-length])
-            if end_phrase in main_part:
-                cleaned_sentence = main_part.strip()
-                break
-    
+    for delimiter in [' dan ', ',']:
+        parts = cleaned_sentence.split(delimiter)
+        if len(parts) > 1:
+            last_part = parts[-1].lower()
+            previous_part = parts[-2].lower()
+
+            normalized_last = re.sub(r'^(bisa|dapat)?\s*(sebabkan|menyebabkan)\s*', '', last_part.strip()).rstrip('.,?!')
+            
+            if normalized_last and normalized_last in previous_part:
+                cleaned_sentence = delimiter.join(parts[:-1])
+
     cleaned_sentence = re.sub(r'\s+([.,?!])', r'\1', cleaned_sentence)
     
     cleaned_sentence = re.sub(r'\b(\w+)\s+\1\b', r'\1', cleaned_sentence, flags=re.IGNORECASE)
 
     if cleaned_sentence:
         cleaned_sentence = cleaned_sentence.lower().capitalize()
-
+        
     return cleaned_sentence.strip()
 
 class DictionaryPostProcessor:
@@ -90,19 +95,37 @@ class DictionaryPostProcessor:
         logger.debug(f"Dictionary replacements made: {replacements_made}")
         return result
     
-
-# Initialize post-processor
 post_processor = DictionaryPostProcessor()
+
+def get_simplification_mapping(text, simplified_text, dictionary):
+    simplification_map = {}
+    
+    for term, replacement in dictionary.items():
+        pattern = r'\b' + re.escape(term) + r'\b'
+        if re.search(pattern, text, re.IGNORECASE):
+            replacement_pattern = r'\b' + re.escape(replacement) + r'\b'
+            if re.search(replacement_pattern, simplified_text, re.IGNORECASE):
+                simplification_map[term] = replacement
+            elif not re.search(pattern, simplified_text, re.IGNORECASE):
+                simplification_map[term] = replacement
+    
+    return simplification_map
+
+def detect_recognized_terms(text, dictionary):
+    recognized = []
+    for term in dictionary.keys():
+        pattern = r'\b' + re.escape(term) + r'\b'
+        if re.search(pattern, text, re.IGNORECASE):
+            recognized.append(term)
+    return recognized
 
 @app.route('/')
 def index():
-    """Serve index.html from templates folder"""
     logger.info("Serving index.html")
     return render_template('index.html')
 
 @app.route('/static/<path:path>')
 def serve_static(path):
-    """Serve static files"""
     return send_from_directory('static', path)
 
 @app.route('/simplify', methods=['POST', 'OPTIONS'])
@@ -137,6 +160,17 @@ def simplify_text():
         if not medical_text_simplifier or not medical_text_simplifier.model_loaded:
             logger.error("Model not loaded when processing request")
             return jsonify({'error': 'Model not loaded. Please try again later.'}), 503
+        
+        # STEP 1: Deteksi istilah yang dikenali
+        recognized_terms = detect_recognized_terms(text, post_processor.dictionary)
+        
+        # Kondisi 3: Tidak ada yang dikenali - STOP
+        if not recognized_terms:
+            return jsonify({
+                'status': 'blocked',
+                'message': 'Tidak ada istilah medis yang dikenali. Proses dihentikan.',
+                'recognized_terms': []
+            }), 400
         
         logger.info("Starting model inference...")
         
@@ -175,17 +209,35 @@ def simplify_text():
             logger.warning(f"Output significantly shorter than input. Input: {len(text)}, Output: {len(final_output)}")
             final_output += " [Information may be incomplete - medical consultation recommended]"
         
-        logger.info("Simplification completed successfully")
+        # Step 4: Dapatkan mapping penyederhanaan
+        simplification_map = get_simplification_mapping(text, final_output, post_processor.dictionary)
         
-        return jsonify({
-            'original_text': text,
-            'simplified_text': final_output,
-            'status': 'success',
-            'processing_steps': {
-                'model_processing': True,
-                'dictionary_processing': True
-            }
-        })
+        logger.info("Simplification completed successfully")
+
+        # Response berdasarkan ada/tidak simplification mapping
+        if simplification_map:
+            return jsonify({
+                'original_text': text,
+                'simplified_text': final_output,
+                'status': 'success',
+                'simplification_map': simplification_map,
+                'processing_steps': {
+                    'model_processing': True,
+                    'dictionary_processing': True
+                }
+            })
+        else:
+            # Fallback jika tidak ada mapping terdeteksi
+            return jsonify({
+                'original_text': text,
+                'simplified_text': final_output,
+                'status': 'success',
+                'simplification_map': {},
+                'processing_steps': {
+                    'model_processing': True,
+                    'dictionary_processing': True
+                }
+            })
         
     except Exception as e:
         logger.error(f"Error in simplify endpoint: {str(e)}")
