@@ -18,22 +18,13 @@ function debugLog(message, data = null) {
 document.addEventListener('DOMContentLoaded', async () => {
     debugLog('DOM Content Loaded');
 
-    // Deklarasikan semua variabel DOM di level yang tepat
     let inputTextarea, simplifyButton, outputBox, inputValidation, diseaseList, diseaseSearch;
 
     try {
-        // Tunggu sedikit untuk memastikan DOM benar-benar siap
         await new Promise(resolve => setTimeout(resolve, 100));
-
-        // Inisialisasi elemen DOM
         initializeDOMElements();
-
-        // Load data terlebih dahulu sebelum setup UI
         await loadDataFiles();
-
-        // Setup UI setelah data loaded
         initializeUI();
-
         debugLog('Application initialized successfully');
 
     } catch (error) {
@@ -41,7 +32,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         debugLog('Initialization failed', error);
     }
 
-    // Fungsi untuk inisialisasi elemen DOM
     function initializeDOMElements() {
         inputTextarea = document.getElementById('input-text');
         simplifyButton = document.getElementById('simplify-button');
@@ -60,13 +50,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // Fungsi untuk initialize seluruh UI
     function initializeUI() {
-        // Initialize komponen
         initializeDiseaseList();
         setupEventListeners();
 
-        // Set initial state
         updateButtonState();
 
         debugLog('UI initialized successfully');
@@ -88,7 +75,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // Fallback data
     function loadFallbackData() {
         debugLog('Loading fallback data...');
         medicalExamples = [{ id: 1, name: "Hipertensi", description: "Tekanan darah tinggi", example: "Pasien dengan hipertensi memerlukan pengobatan rutin.", category: "Penyakit Kardiovaskular" }, { id: 2, name: "Diabetes Mellitus", description: "Gangguan metabolisme gula darah", example: "Pasien dengan diabetes mellitus tipe 2 memerlukan pengaturan diet.", category: "Penyakit Metabolik" }, { id: 3, name: "Kejang Demam", description: "Kejang saat demam tinggi pada anak", example: "Anak dengan kejang demam sederhana biasanya tidak memerlukan pengobatan.", category: "Penyakit Neurologis" }];
@@ -132,12 +118,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function setupEventListeners() {
-        debugLog('Setting up event listeners...');
         if (!inputTextarea || !simplifyButton) return;
         setupSearchFunctionality();
         setupSimplifyButton();
         setupInputValidation();
-        debugLog('Event listeners setup completed');
     }
 
     function setupSearchFunctionality() {
@@ -196,7 +180,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         updateButtonState();
     }
 
-    // PERBAIKAN & PENAMBAHAN: Fungsi validasi dengan pesan
     function updateButtonState() {
         if (!simplifyButton || !inputTextarea || !inputValidation) return;
 
@@ -216,34 +199,44 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function validateInputWithMessage(text) {
         const trimmedText = text.trim();
-        const maxLength = 256;
 
         if (trimmedText.length === 0) {
             return { isValid: false, message: '', type: '' };
         }
 
         const wordCount = trimmedText.split(/\s+/).length;
-        if (wordCount < 2) {
-            return { isValid: false, message: 'Input minimal harus terdiri dari 2 kata.', type: 'error' };
+        if (wordCount < CONFIG.MIN_WORD_COUNT) {
+            return { 
+                isValid: false, 
+                message: MESSAGES.MIN_WORDS, 
+                type: 'error' 
+            };
         }
 
-        if (trimmedText.length < 10) {
-            return { isValid: false, message: 'Input teks terlalu pendek.', type: 'error' };
+        if (trimmedText.length < CONFIG.MIN_TEXT_LENGTH) {
+            return {
+                 isValid: false, 
+                 message: MESSAGES.INPUT_TOO_SHORT, 
+                 type: 'error' 
+            };
         }
 
-        if (text.length > maxLength) {
+        if (text.length > CONFIG.MAX_TEXT_LENGTH) {
             return {
                 isValid: false,
-                message: `Input terlalu panjang. Maksimal ${maxLength} karakter. (${text.length}/${maxLength})`,
+                message: MESSAGES.INPUT_TOO_LONG + ` (${text.length}/${CONFIG.MAX_TEXT_LENGTH})`,
                 type: 'error'
             };
         }
 
-        return { isValid: true, message: 'Input valid dan siap disederhanakan.', type: 'success' };
+        return { 
+            isValid: true, 
+            message: MESSAGES.VALID_INPUT, 
+            type: 'success'
+        };
     }
 
     async function handleSimplify() {
-        debugLog('=== handleSimplify START ===');
         if (!inputTextarea || !outputBox || !simplifyButton) return;
 
         const textToSimplify = inputTextarea.value.trim();
@@ -265,9 +258,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const responseData = await simplifyResponse.json();
             debugLog('Simplify response:', responseData);
 
-            // Handle berdasarkan status
             if (responseData.status === 'blocked') {
-                // Kondisi 3: Tidak ada yang dikenali - STOP
                 outputBox.innerHTML = `
                 <div class="warning-message">
                     <div class="content">
@@ -281,30 +272,26 @@ document.addEventListener('DOMContentLoaded', async () => {
             } else if (responseData.status === 'success') {
                 let outputHTML = '';
 
-                // 1. "Bungkus" teks hasil dengan div-nya sendiri
                 outputHTML += `<div class="simplified-text">${responseData.simplified_text}</div>`;
 
-                // 2. Jika ada mapping, buat HTML-nya (logika ini tetap sama)
                 if (responseData.simplification_map && Object.keys(responseData.simplification_map).length > 0) {
                     mappingHTML = `
-        <div class="simplification-info">
-            <div class="simplification-title">Model berhasil mengenali:</div>
-            <div class="simplification-list">
-                ${Object.entries(responseData.simplification_map).map(([original, simplified]) => `
-                    <div class="simplification-item">
-                        <span class="original-term">${original}</span>
-                        <span class="arrow">→</span>
-                        <span class="simplified-term">${simplified}</span>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-    `;
-                    // Gabungkan HTML mapping ke hasil akhir
+                        <div class="simplification-info">
+                            <div class="simplification-title">Model berhasil mengenali:</div>
+                            <div class="simplification-list">
+                                ${Object.entries(responseData.simplification_map).map(([original, simplified]) => `
+                                    <div class="simplification-item">
+                                        <span class="original-term">${original}</span>
+                                        <span class="arrow">→</span>
+                                        <span class="simplified-term">${simplified}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
                     outputHTML += mappingHTML;
                 }
 
-                // 3. Masukkan semua HTML yang sudah rapi ke outputBox
                 outputBox.innerHTML = outputHTML;
                 outputBox.className = 'output-display success';
             } else {
@@ -323,30 +310,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             outputBox.className = 'output-display';
         } finally {
             setLoadingState(false);
-        }
-
-        debugLog('=== handleSimplify END ===');
-    }
-
-    // Fungsi opsional untuk menampilkan notifikasi mapping kecil
-    function showMappingNotification(mapping) {
-        const mappingCount = Object.keys(mapping).length;
-        const notification = document.createElement('div');
-        notification.className = 'mapping-notification';
-        notification.innerHTML = `
-        <small>✅ ${mappingCount} istilah berhasil disederhanakan</small>
-    `;
-
-        // Tambahkan setelah output box
-        if (outputBox && outputBox.parentNode) {
-            outputBox.parentNode.insertBefore(notification, outputBox.nextSibling);
-
-            // Auto hide setelah 5 detik
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.parentNode.removeChild(notification);
-                }
-            }, 5000);
         }
     }
 

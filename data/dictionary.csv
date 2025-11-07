@@ -57,7 +57,6 @@ Coital cephalgia,sakit kepala saat aktivitas seksual
 Congestive heart failure,gagal jantung
 Corynebacterium diphtheriae,penyebab difteri
 CT scan,pemindaian paru
-Daya tahan tubuh lemah,imun lemah
 DBD,demam berdarah
 Defibrillator kardioverter,alat untuk obati gangguan irama jantung
 Defisiensi alfa-1-antitripsin,kelainan genetik langka
@@ -116,7 +115,7 @@ Faktor genetik,faktor keturunan
 Faktor geografi,faktor wilayah
 Farmako rehabilitasi,terapi dengan obat-obatan
 Faringitis,radang tenggorokan
-Faringitis akut,radang tenggorokan
+Faringitis akut,radang tenggorokan jangka pendek
 Fatigue,kelelahan berlebih
 Feses,tinja
 Fetal distress,gawat janin
@@ -127,6 +126,7 @@ Fisioterapi,terapi fisik
 Floaters,bintik-bintik melayang
 Flossing,menggunakan benang gigi
 Fotopsia,melihat kilatan cahaya
+Gagal jantung kongestif,gagal jantung
 Ganglia basal,area di otak
 Gastritis,radang lambung
 Gastroenteritis,radang lambung-usus
@@ -137,10 +137,14 @@ Gigi molar ketiga,gigi geraham bungsu
 Glaukoma,masalah penglihatan
 Glukosa,gula
 Gold standard,pengobatan utama
+Gonore,kencing nanah
+Heart failure,gagal jantung
 Hemoptisis,batuk berdarah
+Hemoglobin,protein dalam sel darah merah
 Hepatitis B,Hepatitis B
 Hernia,turun berok
 Hernia nucleus pulposus,saraf terjepit
+HHD,penyakit jantung hipertensi
 Hiperemesis gravidarum,mual muntah berlebih saat hamil
 Hiperglikemia,gula darah tinggi
 Hipersensitivitas,terlalu peka
@@ -152,12 +156,15 @@ Hipotiroidisme,masalah tiroid
 HNP,saraf terjepit
 Hypnobirthing,metode relaksasi saat persalinan
 Hypnic headache,sakit kepala hipnik
+Hypertensive Heart Disease,penyakit jantung hipertensi 
 IBS,gangguan iritasi usus besar
 ICD,alat implan
 ICU,ruang ICU
 Implanted port,alat yang ditanam di bawah kulit
 Imunomodulator,peningkat daya tahan tubuh
+Imun lemah,Daya tahan tubuh lemah
 Impacted teeth,gigi impaksi
+Impaksi Gigi,gigi yang tidak dapat tumbuh normal
 Infark cerebri,kematian sel otak
 Infark miokard,serangan jantung
 Infeksi nosokomial,infeksi rumah sakit
@@ -202,6 +209,7 @@ Korioamnionitis,infeksi di dalam rahim atau ketuban
 Kornea,lapisan bening depan mata
 Kortikosteroid,obat antiradang
 Kortisol,hormon stres
+Kronis,jangka panjang
 Kultur,analisis di laboratorium
 Kultur darah,kultur darah
 Kultur feses,kultur tinja
@@ -278,6 +286,7 @@ Perdarahan usus,pendarahan usus
 Periodontitis,infeksi ujung akar
 Perikoronitis,radang gusi
 Pertusis,batuk rejan
+PGK,penyakit ginjal kronis
 PICC,selang yang dimasukkan ke pembuluh darah lengan
 Pielonefritis,infeksi ginjal
 Pinkeye,pinkeye
@@ -295,6 +304,7 @@ Poliuria,sering kencing
 PPOK,penyakit paru kronis penghambat napas
 Posterior Capsule Opacification,katarak kedua
 Post-partum,pasca-melahirkan
+Post partum,pasca-melahirkan
 Progresif,dapat memburuk seiring waktu
 Prokinetik,obat peredam gejala
 Prostetik,buatan
@@ -385,6 +395,7 @@ Transplantasi mikrobiota feses,transplantasi tinja
 Transplantasi sumsum tulang,cangkok sumsum tulang
 Trauma,cedera
 Trauma operasi,cedera saat operasi
+Trimester,periode tiga bulan
 Trombektomi,prosedur mengambil gumpalan dengan alat kecil
 Trombosit,keping darah
 Trombus,penyumbatan
@@ -392,6 +403,7 @@ Tuberkolosis,TBC
 Uji tuberculin,tes kulit
 Ulkus,luka
 Ultrasonografi,gelombang suara
+Ulu hati,perut bagian atas
 Upper respiratory tract infections,radang saluran napas atas
 Uretra,lubang kencing
 Uretritis,infeksi saluran kemih pembawa kencing

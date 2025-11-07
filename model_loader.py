@@ -5,6 +5,11 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration
 import logging
 import time
 from typing import Optional, Dict, Any
+from app.config import (
+    MODEL_MAX_LENGTH, MODEL_MIN_LENGTH, MODEL_NUM_BEAMS,
+    MODEL_REPETITION_PENALTY, MODEL_NO_REPEAT_NGRAM_SIZE,
+    MODEL_TEMPERATURE, MODEL_TOP_K, MODEL_TOP_P
+)
 
 # Setup logging
 logging.basicConfig(
@@ -19,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 class MedicalTextSimplifier:
     
-    def __init__(self, model_repo: str = "shanndrea/indoT5-small-penyederhanaan-teks-medis"):
+    def __init__(self, model_repo: str = "shanndrea/indot5-small-medical-simplifier"):
         # Inisialisasi komponen model
         self.model_repo = model_repo
         self.tokenizer = None
@@ -29,15 +34,14 @@ class MedicalTextSimplifier:
         self.load_start_time = None
         self.load_end_time = None
         
-        # Konfigurasi generasi teks
         self.generation_config = {
-            'max_length': 256,
-            'min_length': 20,
-            'num_beams': 6,
+            'max_length': MODEL_MAX_LENGTH,                    
+            'min_length': MODEL_MIN_LENGTH,                    
+            'num_beams': MODEL_NUM_BEAMS,                      
             'length_penalty': 1.5,
-            'no_repeat_ngram_size': 3,
+            'no_repeat_ngram_size': MODEL_NO_REPEAT_NGRAM_SIZE, 
             'early_stopping': True,
-            'temperature': 0.8,
+            'temperature': MODEL_TEMPERATURE,                  
             'do_sample': False
         }
     
@@ -247,36 +251,6 @@ class MedicalTextSimplifier:
             logger.error(f"Output tokens type: {type(output_tokens[0]) if 'output_tokens' in locals() else 'N/A'}")
             return processed_text
 
-    def batch_simplify(self, texts: list, batch_size: int = 4) -> list:
-        # Sederhanakan multiple texts sekaligus (batch processing)
-        if not self.model_loaded:
-            raise RuntimeError("Model not loaded")
-        
-        if not texts:
-            return []
-        
-        simplified_texts = []
-        total_texts = len(texts)
-        
-        logger.info(f"Processing {total_texts} texts in batches ({batch_size}/batch)")
-        
-        for i in range(0, total_texts, batch_size):
-            batch = texts[i:i + batch_size]
-            batch_start = i + 1
-            batch_end = min(i + batch_size, total_texts)
-            
-            logger.info(f"Processing batch {batch_start}-{batch_end} of {total_texts}")
-            
-            for text in batch:
-                try:
-                    simplified = self.simplify_medical_text(text)
-                    simplified_texts.append(simplified)
-                except Exception as error:
-                    logger.error(f"Failed to process text in batch: {str(error)}")
-                    simplified_texts.append(text)
-        
-        return simplified_texts
-    
     def get_model_status(self) -> Dict[str, Any]:
         # Dapatkan informasi status model saat ini
         return {

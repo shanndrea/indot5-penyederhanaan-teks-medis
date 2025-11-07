@@ -1,0 +1,305 @@
+{
+  "medicalExamples": [
+    {
+      "id": 1,
+      "name": "Hipertensi",
+      "description": "Kondisi tekanan darah tinggi yang persisten",
+      "example": "Hipertensi primer adalah bentuk hipertensi yang paling umum, biasanya berkembang secara bertahap selama bertahun-tahun tanpa penyebab yang pasti.",
+      "category": "Penyakit Kardiovaskular"
+    },
+    {
+      "id": 2,
+      "name": "Penyakit Jantung Hipertensi",
+      "description": "Gangguan jantung akibat tekanan darah tinggi jangka panjang",
+      "example": "Pada beberapa kasus yang sangat serius, penderita hypertensive heart disease mungkin memerlukan tindakan operasi untuk meningkatkan aliran darah ke jantung.",
+      "category": "Penyakit Kardiovaskular"
+    },
+    {
+      "id": 3,
+      "name": "Kejang Demam",
+      "description": "Kejang pada anak yang dipicu oleh demam",
+      "example": "Kejang demam berbeda dengan epilepsi. Kejang demam ditandai oleh terjadinya kejang saat demam, sementara epilepsi kejang tanpa demam.",
+      "category": "Penyakit Neurologis Anak"
+    },
+    {
+      "id": 4,
+      "name": "Gastroenteritis",
+      "description": "Peradangan pada lambung dan usus (flu perut)",
+      "example": "Gejala-gejala gastroenteritis biasanya bersifat ringan. Namun, pada ibu hamil, bayi dan anak-anak, lansia, atau orang dengan imun lemah, keluhan gastroenteritis bisa menjadi parah hingga menyebabkan dehidrasi.",
+      "category": "Penyakit Pencernaan"
+    },
+    {
+      "id": 5,
+      "name": "Kolitis",
+      "description": "Peradangan pada usus besar",
+      "example": "Gejalanya sangat bervariasi tergantung pada jenis kolitis, hampir setiap jenis kolitis memiliki gejala ketidaknyamanan perut, diare , dan/atau nyeri.",
+      "category": "Penyakit Pencernaan"
+    },
+    {
+      "id": 6,
+      "name": "Bronkitis Kronis",
+      "description": "Peradangan saluran napas jangka panjang",
+      "example": "Bronkitis kronis yang memburuk dan tidak ditangani berisiko menyebabkan pneumonia, yang ditandai dengan nyeri dada, demam, dan penurunan kesadaran.",
+      "category": "Penyakit Pernapasan"
+    },
+    {
+      "id": 7,
+      "name": "Asma",
+      "description": "Penyakit peradangan kronis pada saluran napas",
+      "example": "Tak hanya kesulitan bernapas, asma juga menyebabkan gejala lain seperti mengi, batuk-batuk, dan nyeri dada.",
+      "category": "Penyakit Pernapasan"
+    },
+    {
+      "id": 8,
+      "name": "Diabetes Mellitus Tipe 2",
+      "description": "Penyakit gula akibat resistensi insulin atau kekurangan insulin relatif",
+      "example": "Seseorang yang mengidap diabetes mellitus noninsulependent masih dapat memproduksi insulin. Namun, insulin yang dihasilkan tidak mampu mencukupi kebutuhan tubuh.",
+      "category": "Penyakit Endokrin & Metabolik"
+    },
+    {
+      "id": 9,
+      "name": "Infeksi Saluran Kemih (ISK)",
+      "description": "Infeksi yang terjadi di sistem perkemihan",
+      "example": "Ibu hamil lebih rentan terhadap ISK karena perubahan hormonal dan fisik yang terjadi selama kehamilan.",
+      "category": "Penyakit Infeksi"
+    },
+    {
+      "id": 10,
+      "name": "Faringitis Akut",
+      "description": "Radang tenggorokan yang terjadi secara mendadak",
+      "example": "Faringitis akut juga bisa disebabkan oleh reaksi alergi, seperti serbuk sari, tungau, debu, bulu hewan peliharaan, dan jamur",
+      "category": "Penyakit THT"
+    },
+    {
+      "id": 11,
+      "name": "Penyakit Paru Obstruktif Kronis (PPOK)",
+      "description": "Penyakit paru kronis yang menghambat aliran udara",
+      "example": "Penyakit paru obstruktif kronis (PPOK) adalah peradangan pada paru-paru yang berlangsung dalam jangka panjang.",
+      "category": "Penyakit Pernapasan"
+    },
+    {
+      "id": 12,
+      "name": "Infeksi Saluran Pernapasan Akut (ISPA)",
+      "description": "Infeksi mendadak pada saluran napas atas atau bawah",
+      "example": "Sebagian besar ISPA dapat sembuh sendiri dalam waktu 14 hari, namun pada kasus yang berat diperlukan rawat inap.",
+      "category": "Penyakit Infeksi"
+    },
+    {
+      "id": 13,
+      "name": "Demam Berdarah Dengue (DBD)",
+      "description": "Penyakit infeksi virus yang menular lewat nyamuk",
+      "example": "DBD yang parah terjadi ketika pembuluh darah menjadi rusak dan bocor. Kondisi ini akan menyebabkan jumlah trombosit dalam aliran darah turun drastis.",
+      "category": "Penyakit Infeksi"
+    },
+    {
+      "id": 14,
+      "name": "Dispepsia Fungsional",
+      "description": "Gangguan pencernaan tanpa sebab organik yang jelas",
+      "example": "Orang yang mengalami dispepsia fungsional umumnya akan merasakan gejala sakit pada ulu hati yang disertai dengan perasaan kembung, sendawa, dan mual.",
+      "category": "Penyakit Pencernaan"
+    },
+    {
+      "id": 15,
+      "name": "Gastritis",
+      "description": "Peradangan pada lapisan lambung",
+      "example": "Kebanyakan penderita gastritis, bila ada, gejala yang dirasakan berupa nyeri ulu hati, mual, dan muntah.",
+      "category": "Penyakit Pencernaan"
+    },
+    {
+      "id": 16,
+      "name": "Gagal Jantung Kongestif",
+      "description": "Kondisi saat jantung gagal memompa darah yang dibutuhkan tubuh",
+      "example": "Pada tahap kondisi gagal jantung kongestif berat, penderita gagal jantung kongestif akan mengalami kesulitan dalam menjalani aktivitas sehari-hari.",
+      "category": "Penyakit Kardiovaskular"
+    },
+    {
+      "id": 17,
+      "name": "Bronkopneumonia",
+      "description": "Jenis radang paru yang menyerang saluran dan kantung udara",
+      "example": "berkembangnya bronkopneumonia di rumah sakit juga bisa disebabkan oleh bakteri yang sudah kebal terhadap antibiotik.",
+      "category": "Penyakit Pernapasan"
+    },
+    {
+      "id": 18,
+      "name": "Anemia",
+      "description": "Kondisi kekurangan sel darah merah atau hemoglobin",
+      "example": "Anemia terjadi ketika tubuh mengalami kekurangan sel darah merah atau hemoglobin. Kadar hemoglobin yang rendah dapat menyebabkan menurunnya pasokan darah untuk membawa oksigen ke organ tubuh, termasuk otak. Akibatnya, kepala menjadi sering pusing.",
+      "category": "Penyakit Darah"
+    },
+    {
+      "id": 19,
+      "name": "Demam Tifoid (Tipes)",
+      "description": "Penyakit infeksi akibat bakteri Salmonella typhi",
+      "example": "Anamnesis demam tifoid pada fase awal umumnya meliputi demam disertai keluhan yang tidak khas. Terkadang dijumpai keluhan arthralgia",
+      "category": "Prosedur Medis"
+    },
+    {
+      "id": 20,
+      "name": "Nyeri Punggung Bawah",
+      "description": "Rasa nyeri di pinggang yang bisa menjalar ke bokong dan paha",
+      "example": "Obat-obatan narkotika dan antidepresan (penenang) digunakan untuk meredakan nyeri punggung bawah yang sangat berat.",
+      "category": "Kondisi Muskuloskeletal"
+    },
+    {
+      "id": 21,
+      "name": "Stroke Infark",
+      "description": "Stroke akibat sumbatan pembuluh darah di otak",
+      "example": "stroke infark tidak disebabkan oleh perdarahan. Kondisi ini merupakan dampak dari kurangnya pasokan oksigen ke otak yang disebabkan oleh adanya hambatan di pembuluh darah arteri otak.",
+      "category": "Penyakit Neurologis"
+    },
+    {
+      "id": 22,
+      "name": "Pneumonia",
+      "description": "Peradangan paru-paru akibat infeksi",
+      "example": "pneumonia juga bisa terjadi bersama penyakit paru-paru lain, misalnya TB paru.",
+      "category": "Penyakit Pernapasan"
+    },
+    {
+      "id": 23,
+      "name": "Kemoterapi",
+      "description": "Pemberian obat untuk menghentikan pertumbuhan sel kanker",
+      "example": "kemoterapi juga dapat dilakukan melalui arteri di sekitar lokasi kanker (intraarterial).",
+      "category": "Prosedur Medis"
+    },
+    {
+      "id": 24,
+      "name": "Konjungtivitis",
+      "description": "Mata merah akibat peradangan pada selaput mata",
+      "example": "Konjungtivitis juga kadang-kadang disebabkan oleh penyakit menular seksual (PMS). Gonore dan Chlamydia adalah contoh PMS yang bisa menyebabkan konjungtivitis.",
+      "category": "Penyakit Mata"
+    },
+    {
+      "id": 25,
+      "name": "Karies Gigi",
+      "description": "Kerusakan lapisan struktur gigi (gigi berlubang)",
+      "example": "Karies gigi terjadi ketika bakteri yang melekat di gigi, terutama Streptococcus mutans, menghasilkan asam dari sisa-sisa makanan seperti karbohidrat.",
+      "category": "Kesehatan Gigi & Mulut"
+    },
+    {
+      "id": 26,
+      "name": "Rehabilitasi Medik",
+      "description": "Terapi untuk memulihkan fungsi tubuh yang bermasalah",
+      "example": "Rehabilitasi medik juga bisa didapatkan dalam bentuk terapi okupasi, terapi penglihatan, dan terapi bicara, disesuaikan dengan kebutuhan masing-masing pasien.",
+      "category": "Prosedur Medis"
+    },
+    {
+      "id": 27,
+      "name": "Katarak",
+      "description": "Gangguan penglihatan akibat keruhnya lensa mata",
+      "example": "Salah satu gejala katarak adalah muncul bayangan berupa floaters atau kilatan cahaya pada penglihatan.",
+      "category": "Penyakit Mata"
+    },
+    {
+      "id": 28,
+      "name": "Gigi Impaksi",
+      "description": "Kondisi gigi yang tidak dapat keluar dengan normal",
+      "example": "Beberapa kondisi yang biasanya menyertai kondisi impaksi gigi adalah nyeri hebat. Nyeri hebat yang muncul bisa disebabkan oleh gaya dorongan gigi yang tumbuh keluar dari tulang rahang dan menembus gusi.",
+      "category": "Kesehatan Gigi & Mulut"
+    },
+    {
+      "id": 29,
+      "name": "Malaise",
+      "description": "Perasaan lelah dan tidak nyaman tanpa penyebab jelas",
+      "example": "Jika malaise yang Anda alami disebabkan oleh infeksi, dokter akan memberikan obat antivirus atau antibiotik sesuai penyebab infeksinya.",
+      "category": "Gejala Umum"
+    },
+    {
+      "id": 30,
+      "name": "Myalgia dan Fibromyalgia",
+      "description": "Perbedaan antara nyeri otot lokal dan nyeri seluruh tubuh",
+      "example": "Myalgia idiopatik adalah nyeri otot tanpa penyebab yang diketahui, sedangkan fibromyalgia adalah nyeri otot di sekujur tubuh yang disertai kelelahan, masalah tidur, dan gangguan kognitif (kesulitan berkonsentrasi dan mengingat sesuatu).",
+      "category": "Gejala Umum"
+    },
+    {
+      "id": 31,
+      "name": "Hiperemesis Gravidarum",
+      "description": "Mual dan muntah berlebihan selama kehamilan",
+      "example": "Jika tidak segera ditangani, hiperemesis gravidarum dapat menyebabkan organ-organ tubuh ibu hamil gagal berfungsi dan bayi terlahir prematur.",
+      "category": "Kondisi Terkait Kehamilan"
+    },
+    {
+      "id": 32,
+      "name": "GERD (Penyakit Asam Lambung)",
+      "description": "Kondisi saat asam lambung naik ke kerongkongan",
+      "example": "Gejala yang kurang umum gejala GERD meliputi nyeri dada, erosi gigi, dan asma",
+      "category": "Penyakit Pencernaan"
+    },
+    {
+      "id": 33,
+      "name": "Gagal Ginjal Kronis",
+      "description": "Penurunan fungsi ginjal secara bertahap",
+      "example": "Gagal ginjal kronis adalah ketika fungsi ginjal menurun secara bertahap akibat kerusakan jaringan ginjal.",
+      "category": "Penyakit Ginjal"
+    },
+    {
+      "id": 34,
+      "name": "Dermatitis Atopik",
+      "description": "Peradangan kulit kronis yang gatal dan kering",
+      "example": "Penderita dermatitis atopik disarankan untuk mengenakan pakaian yang longgar dan bahannya lembut, serta menghindari bahan wol dan kain sintetis, seperti poliester atau spandex",
+      "category": "Penyakit Kulit"
+    },
+    {
+      "id": 35,
+      "name": "Tonsilitis",
+      "description": "Peradangan pada amandel",
+      "example": "Bedanya dengan akut, tonsilitis kronis berlangsung lama atau sering kambuh, serta bisa berlangsung lebih dari beberapa bulan.",
+      "category": "Penyakit THT"
+    },
+    {
+      "id": 36,
+      "name": "Pulpitis",
+      "description": "Peradangan pada pulpa (bagian dalam) gigi",
+      "example": "Sebelum melakukan tindakan medis, biasanya dokter akan terlebih dahulu meresepkan obat kepada penderita pulpitis untuk meredakan infeksi.",
+      "category": "Kesehatan Gigi & Mulut"
+    },
+    {
+      "id": 37,
+      "name": "Tuberkulosis (TBC)",
+      "description": "Infeksi bakteri kronis umumnya pada paru-paru",
+      "example": "Tuberkolosis juga bisa menginfeksi organ lain selain paru. Penyakit ini merupakan salah satu penyebab kematian terbesar di dunia.",
+      "category": "Penyakit Infeksi"
+    },
+    {
+      "id": 38,
+      "name": "Kehamilan",
+      "description": "Periode perkembangan janin dalam rahim",
+      "example": "Pada trimester kedua adalah masa ketika ibu hamil dapat merasakan janin bergerak untuk pertama kalinya. Ini juga menjadi momen ketika bagian-bagian tubuh janin terbentuk seperti jantung, paru-paru, ginjal, dan otak.",
+      "category": "Kondisi Terkait Kehamilan"
+    },
+    {
+      "id": 39,
+      "name": "Penyakit Ginjal Kronis (PGK)",
+      "description": "Penurunan fungsi ginjal secara progresif",
+      "example": "Anda harus menjaga asupan cairan dalam keseharian untuk mencegah terjadinya komplikasi PGK stadium 5.",
+      "category": "Penyakit Ginjal"
+    },
+    {
+      "id": 40,
+      "name": "Diabetes Tipe 1",
+      "description": "Penyakit autoimun yang merusak sel penghasil insulin",
+      "example": "Diabetes tipe 1 terjadi ketika tubuh kurang atau tidak memproduksi insulin, Akibatnya, penderita diabetes tipe 1 memerlukan tambahan insulin dari luar.",
+      "category": "Penyakit Endokrin & Metabolik"
+    },
+    {
+      "id": 41,
+      "name": "Gastroenteritis (Flu Perut)",
+      "description": "Peradangan pada lambung dan usus",
+      "example": "Jika sakit perut yang ditandai dengan diare, BAB berdarah, muntah, dan tidak nafsu makan, Anda bisa jadi mengalami gastroenteritis.",
+      "category": "Penyakit Pencernaan"
+    },
+    {
+      "id": 42,
+      "name": "Insulin",
+      "description": "Hormon yang mengontrol kadar gula darah",
+      "example": "Kadar gula darah dikontrol oleh hormon insulin yang dihasilkan oleh pankreas. Ketika makanan yang masuk ke dalam tubuh dicerna, insulin akan diproduksi agar gula darah dapat masuk ke dalam sel untuk diubah menjadi energi.",
+      "category": "Proses Fisiologis"
+    },
+    {
+      "id": 43,
+      "name": "Partus Lama",
+      "description": "Proses persalinan yang berlangsung terlalu lama",
+      "example": "Partus lama dapat menyebabkan infeksi, kehabisan tenaga, dehidrasi, dan perdarahan post partum yang dapat menyebabkan kematian ibu.",
+      "category": "Kondisi Terkait Kehamilan"
+    }
+  ]
+}
