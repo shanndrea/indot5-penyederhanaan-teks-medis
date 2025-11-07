@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <header class="header-bar"></header>
@@ -21,15 +23,15 @@
                     <h3>Koleksi Istilah Medis</h3>
                     <p>Contoh istilah dan kondisi yang dapat disederhanakan</p>
                 </div>
-                
+
                 <div class="search-box">
                     <input type="text" id="disease-search" placeholder="Cari istilah medis...">
                 </div>
-                
+
                 <div class="disease-list" id="disease-list">
                     <!-- Daftar penyakit akan diisi oleh JavaScript -->
                 </div>
-                
+
                 <div class="sidebar-footer">
                     <p><strong>Tip:</strong> Klik pada istilah untuk melihat contoh</p>
                 </div>
@@ -39,7 +41,7 @@
             <div class="main-content">
                 <h1>Sederhanakan Teks Medis</h1>
                 <p class="subtitle">
-                    Ubah istilah dan kalimat medis yang rumit menjadi bahasa yang lebih sederhana dan mudah dimengerti. 
+                    Ubah istilah dan kalimat medis yang rumit menjadi bahasa yang lebih sederhana dan mudah dimengerti.
                     Cukup masukkan teks pada kolom di bawah ini untuk melihat hasilnya secara instan.
                 </p>
 
@@ -47,7 +49,8 @@
                     <div class="translator-box">
                         <div class="column">
                             <label for="input-text">Input</label>
-                            <textarea id="input-text" placeholder="Input atau paste teks untuk sederhanakan...."></textarea>
+                            <textarea id="input-text"
+                                placeholder="Input atau paste teks untuk sederhanakan...."></textarea>
                             <div class="input-validation" id="input-validation"></div>
                             <button class="simplify-button" id="simplify-button" type="button">
                                 <span class="button-text">Sederhanakan</span>
@@ -65,7 +68,78 @@
         </div>
     </main>
 
-<script src="{{ url_for('static', filename='config.js') }}"></script>
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+    <footer class="academic-footer">
+        <div class="footer-content">
+
+            <div class="footer-section logo-section">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Fakultas" class="faculty-logo">
+                <div class="institution-info">
+                    <h4>Fakultas Teknologi Informasi</h4>
+                    <p>Universitas Tarumanagara</p>
+                    <p>Jln Letjen S. Parman No. 1, Grogol Petamburan</p>
+                    <p>Jakarta Barat, 11440</p>
+                    <p>Gedung R, Kampus I</p>
+                </div>
+            </div>
+
+            <div class="footer-section system-section">
+                <div class="system-info">
+                    <h3>Sederhanakan Teks Medis</h3>
+
+                    <p class="system-description">
+                        Aplikasi ini dirancang sebagai bagian dari Tugas Akhir untuk membantu menjembatani kesenjangan
+                        komunikasi antara profesional medis dan pasien dengan menyederhanakan terminologi dan kalimat
+                        medis yang rumit menjadi bahasa yang lebih mudah dipahami.
+                    </p>
+                    <p>Program Studi Teknik Informatika</p>
+                </div>
+            </div>
+
+            <div class="footer-section people-section">
+
+                <div class="person-info student-info">
+                    <div class="person-details">
+                        <img src="{{ url_for('static', filename='images/student.jpg') }}" alt="Foto Mahasiswa"
+                            class="person-photo">
+                        <div class="person-text">
+                            <p class="person-name"><strong>Shannon Andrea</strong></p>
+                            <p class="person-role">Pembuat Sistem</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="person-info supervisor-info">
+                    <div class="person-details">
+                        <img src="{{ url_for('static', filename='images/dospem-utama.png') }}"
+                            alt="Foto Dosen Pembimbing 1" class="person-photo">
+                        <div class="person-text">
+                            <p class="person-name"><strong>Bagus Mulyawan, S.Kom., M.M.</strong></p>
+                            <p class="person-role">Dosen Pembimbing Utama</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="person-info supervisor-info">
+                    <div class="person-details">
+                        <img src="{{ url_for('static', filename='images/dospem-pendamping.png') }}"
+                            alt="Foto Dosen Pembimbing 2" class="person-photo">
+                        <div class="person-text">
+                            <p class="person-name"><strong>Janson Hendryli, S.Kom., M.Kom.</strong></p>
+                            <p class="person-role">Dosen Pembimbing Pendamping</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fakultas Teknologi Informasi - Universitas Tarumanagara. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='config.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
+
 </html>

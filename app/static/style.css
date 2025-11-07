@@ -446,3 +446,190 @@ textarea:focus {
     font-weight: 500;
     color: #333;
 }
+
+/* === STYLING FOOTER AKADEMIK (VERSI BERSIH) === */
+
+.academic-footer {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    padding: 30px 0 20px; /* Padding atas dikurangi sedikit */
+    margin-top: 60px;
+    border-top: 4px solid #3d8b6d;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* Memastikan semua tetap 1 baris */
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Pengaturan dasar untuk 3 bagian utama */
+.footer-section {
+    flex: 1; /* Memberi ruang yang proporsional */
+    min-width: 0; /* Penting untuk flex-shrinking */
+    margin-bottom: 0;
+}
+
+/* Bagian 1: Logo */
+.footer-section.logo-section {
+    display: flex;
+    flex-direction: column; /* BARU: Tumpuk secara vertikal */
+    align-items: flex-start; /* BARU: Rata kiri */
+    justify-content: center;
+    gap: 10px;               /* Jarak antara logo dan teks */
+    flex-basis: 30%;
+}
+
+.faculty-logo {
+    max-width: 100px;
+    height: auto;
+    opacity: 0.9;
+    /* Hapus margin-bottom jika ada, biarkan 'gap' yang mengatur */
+}
+
+.institution-info {
+     text-align: left; /* Pastikan teks rata kiri */
+}
+
+.institution-info h4 {
+    color: #3d8b6d;
+    margin-bottom: 2px;
+    font-size: 1.05rem;
+}
+
+.institution-info p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+
+/* Bagian 2: Info Sistem */
+.footer-section.system-section {
+    text-align: left;
+    flex-basis: 40%; /* Beri basis ukuran */
+}
+
+/* Style khusus untuk paragraf deskripsi sistem */
+.system-info .system-description {
+    font-size: 0.8rem;      /* Ukuran font lebih kecil */
+    line-height: 1.4;       /* Jarak antar baris agar nyaman dibaca */
+    opacity: 0.7;           /* Sedikit lebih pudar agar tidak terlalu dominan */
+    max-width: 450px;       /* Batasi lebar paragraf agar rapi */
+    margin: 8px auto;       /* Beri jarak atas/bawah & tengahkan blok */
+}
+
+.system-info h3 {
+    color: #3d8b6d;
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+}
+
+.system-info p {
+    margin: 2px 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Bagian 3: Grup Orang */
+.footer-section.people-section {
+    display: flex;
+    justify-content: flex-end; /* Rata kanan */
+    align-items: center;
+    gap: 20px; /* Jarak antar kartu orang */
+    flex-wrap: wrap; /* Izinkan wrap jika tidak muat */
+    flex-basis: 30%; /* Beri basis ukuran */
+}
+
+/* Kartu Info Orang (Versi Mungil) */
+.person-info {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 260px; /* Lebar minimum kartu */
+    flex-grow: 1;
+}
+
+.person-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.person-details {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.person-photo {
+    width: 50px; /* Ukuran foto disesuaikan */
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.person-text {
+    flex: 1;
+}
+
+.person-name {
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: #2c3e50;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.person-role {
+    color: #3d8b6d;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef; /* Garis pemisah lebih soft */
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    color: #2c3e50;
+}
+
+
+/* === Responsif untuk Footer === */
+/* Tumpuk jika layar terlalu kecil */
+@media (max-width: 1200px) {
+    .footer-content {
+        flex-wrap: wrap; /* Izinkan 3 bagian utama untuk menumpuk */
+        justify-content: center;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    .footer-section.logo-section,
+    .footer-section.system-section,
+    .footer-section.people-section {
+        flex-basis: 100%; /* Buat lebar penuh saat menumpuk */
+        justify-content: center;
+    }
+
+    .footer-section.people-section {
+        gap: 15px; /* Kurangi gap antar orang di layar kecil */
+    }
+}
